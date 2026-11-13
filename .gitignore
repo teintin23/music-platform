@@ -1,0 +1,28 @@
+# ===== Build =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# ===== IDE =====
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+out/
+bin/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Rieng cua project =====
+# File nhac: nang, chia se qua Drive
+uploads/
+deezer_data/
+*.mp3
+
+# Mat khau DB tung may
+local.properties
