@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    # Uses DB_URL if set, otherwise defaults to localhost:5432/music_streaming
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/music_streaming}
+    # Uses DB_USERNAME if set, otherwise defaults to 'postgres'
+    username: ${DB_USERNAME:postgres}
+    # Uses DB_PASSWORD if set, otherwise defaults to 'postgres'
+    password: ${DB_PASSWORD:postgres}
+  sql:
+    init:
+      mode: never
+
+app:
+  jwt:
+    # Secret can also be overridden via environment variable
+    secret: ${JWT_SECRET:TXVzaWNTdHJlYW1pbmdHcm91cDVTZWNyZXRLZXkyMDI0VmVyeUxvbmdBbmRTZWN1cmU=}
+    expiration-ms: 86400000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+server:
+  port: 8080
