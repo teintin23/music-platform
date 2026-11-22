@@ -36,6 +36,11 @@ public class UserRepository {
         return user;
     }
 
+    public void updateProfile(Integer userId, String username, String email, String passwordHash) {
+        String sql = "UPDATE app_user SET username = ?, email = ?, password_hash = ? WHERE user_id = ?";
+        jdbcTemplate.update(sql, username, email, passwordHash, userId);
+    }
+    
     public Optional<AppUser> findByUsername(String username) {
         return jdbcTemplate.query("SELECT * FROM app_user WHERE username = ?", rowMapper, username)
                 .stream().findFirst();
